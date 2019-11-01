@@ -162,37 +162,37 @@ def index():
           "(select * from color where color.index> " + pick_range[0] +
           " and color.index<" + pick_range[1] + ") as a" +
           " ORDER BY RAND() LIMIT 2;"
-        )
+        ).fetchall()
       elif 4 < correct_click <= 11:
         res = cur.execute(
           "SELECT" + " * FROM " +
           "(select * from color where color.index> " + pick_range[2] +
           " and color.index<" + pick_range[3] + ") as a" +
           " ORDER BY RAND() LIMIT 2;"
-        )
+        ).fetchall()
       elif 11 < correct_click <= 17:
         res = cur.execute(
           "SELECT" + " * FROM " +
           "(select * from color where color.index> " + pick_range[4] +
           " and color.index<" + pick_range[5] + ") as a" +
           " ORDER BY RAND() LIMIT 2;"
-        )
+        ).fetchall()
       elif 17 < correct_click <= 25:
         res = cur.execute(
           "SELECT" + " * FROM " +
           "(select * from color where color.index> " + pick_range[6] +
           " and color.index<" + pick_range[7] + ") as a" +
           " ORDER BY RAND() LIMIT 2;"
-        )
+        ).fetchall()
       else:
         res = cur.execute(
           "SELECT" + " * FROM " +
           "(select * from color where color.index> " + pick_range[8] +
           " and color.index<" + pick_range[9] + ") as a" +
           " ORDER BY RAND() LIMIT 2;"
-        )
+        ).fetchall()
 
-      random_color = cur.fetchall()
+      random_color = res
       random_color1 = random_color[0]['deep']
       random_color2 = random_color[0]['light']
       random_color3 = random_color[1]['deep']
