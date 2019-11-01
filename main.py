@@ -153,7 +153,8 @@ def index():
       correct_click = 0
 
     if db:
-      cur = db.cursor()
+      #cur = db.cursor()
+      cur = db.connect()
       if correct_click <= 4:
         # Execute the query and fetch all results
         res = cur.execute(
